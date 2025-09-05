@@ -15,6 +15,8 @@ export default function Home() {
         <title>UmarxUploader - Drive to Drive Transfer</title>
         <meta name="description" content="Transfer files between Google Drive accounts safely and securely." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
       
       <div style={{ 
@@ -24,17 +26,34 @@ export default function Home() {
         
         {/* Header */}
         <header style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h1 style={{ 
-            fontSize: '32px',
-            fontWeight: '600',
-            background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            margin: '0 0 8px 0'
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            marginBottom: '16px' 
           }}>
-            UmarxUploader
-          </h1>
+            <img 
+              src="/favicon.png" 
+              alt="UmarxUploader Icon" 
+              style={{ 
+                width: '48px', 
+                height: '48px', 
+                marginRight: '12px',
+                borderRadius: '8px'
+              }} 
+            />
+            <h1 style={{ 
+              fontSize: '32px',
+              fontWeight: '600',
+              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              margin: 0
+            }}>
+              UmarxUploader
+            </h1>
+          </div>
           <p style={{ 
             fontSize: '18px', 
             color: '#6b7280',
