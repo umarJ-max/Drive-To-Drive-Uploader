@@ -150,8 +150,6 @@ export default function Home() {
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <a 
               href="https://script.google.com/macros/s/AKfycbzVgsOWqUD28F0nsJsKYHN2WptsAZO2kX2H3Uo31uDPsXHvImsnn9-YqzG1_24mLslv/exec" 
-              target="_blank" 
-              rel="noopener noreferrer" 
               style={{ 
                 display: 'inline-block', 
                 background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)', 
