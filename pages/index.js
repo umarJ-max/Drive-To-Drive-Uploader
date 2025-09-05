@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div style={{ 
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', 
-      background: '#fafbfc', 
+      background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', 
       minHeight: '100vh', 
       padding: '20px'
     }}>
@@ -27,7 +27,10 @@ export default function Home() {
           <h1 style={{ 
             fontSize: '32px',
             fontWeight: '600',
-            color: '#1f2937',
+            background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
             margin: '0 0 8px 0'
           }}>
             UmarxUploader
@@ -44,31 +47,45 @@ export default function Home() {
         {/* Main Content Card */}
         <div style={{ 
           background: '#fff', 
-          borderRadius: '8px', 
+          borderRadius: '12px', 
           padding: '32px',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
           border: '1px solid #e5e7eb',
           marginBottom: '24px'
         }}>
           
           {/* Privacy Notice */}
           <div style={{ 
-            background: '#f0f9ff', 
-            border: '1px solid #0ea5e9',
-            borderRadius: '6px',
-            padding: '16px', 
-            marginBottom: '32px'
+            background: 'linear-gradient(135deg, #dbeafe, #f0f9ff)', 
+            border: '1px solid #3b82f6',
+            borderRadius: '8px',
+            padding: '20px', 
+            marginBottom: '32px',
+            position: 'relative'
           }}>
+            <div style={{
+              position: 'absolute',
+              top: '-6px',
+              left: '20px',
+              background: '#3b82f6',
+              color: 'white',
+              padding: '4px 12px',
+              borderRadius: '12px',
+              fontSize: '12px',
+              fontWeight: '500'
+            }}>
+              🔒 SECURE
+            </div>
             <h3 style={{ 
-              color: '#0c4a6e', 
+              color: '#1e40af', 
               fontSize: '16px',
               fontWeight: '600',
-              margin: '0 0 8px 0'
+              margin: '8px 0 8px 0'
             }}>
               Your data stays private
             </h3>
             <p style={{ 
-              color: '#1e40af', 
+              color: '#1e3a8a', 
               margin: 0, 
               fontSize: '14px',
               lineHeight: '1.5'
@@ -89,11 +106,12 @@ export default function Home() {
           
           <div style={{ marginBottom: '24px' }}>
             <div style={{ 
-              background: '#fef3c7', 
+              background: 'linear-gradient(135deg, #fef3c7, #fde68a)', 
               border: '1px solid #f59e0b',
-              borderRadius: '6px',
-              padding: '12px',
-              marginBottom: '16px'
+              borderRadius: '8px',
+              padding: '16px',
+              marginBottom: '16px',
+              borderLeft: '4px solid #f59e0b'
             }}>
               <p style={{ 
                 margin: 0, 
@@ -136,21 +154,30 @@ export default function Home() {
               rel="noopener noreferrer" 
               style={{ 
                 display: 'inline-block', 
-                background: '#3b82f6', 
+                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)', 
                 color: '#fff', 
-                padding: '12px 24px', 
-                borderRadius: '6px', 
+                padding: '14px 28px', 
+                borderRadius: '8px', 
                 fontSize: '16px', 
-                fontWeight: '500', 
+                fontWeight: '600', 
                 textDecoration: 'none',
-                transition: 'background-color 0.2s',
+                boxShadow: '0 4px 14px 0 rgba(59, 130, 246, 0.4)',
+                transition: 'all 0.2s ease',
                 border: 'none',
                 cursor: 'pointer'
               }}
-              onMouseEnter={(e) => e.target.style.background = '#2563eb'}
-              onMouseLeave={(e) => e.target.style.background = '#3b82f6'}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'linear-gradient(135deg, #2563eb, #1e40af)';
+                e.target.style.transform = 'translateY(-1px)';
+                e.target.style.boxShadow = '0 6px 20px 0 rgba(59, 130, 246, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 4px 14px 0 rgba(59, 130, 246, 0.4)';
+              }}
             >
-              Launch App
+              🚀 Launch App
             </a>
           </div>
 
@@ -160,15 +187,21 @@ export default function Home() {
               cursor: 'pointer', 
               fontWeight: '500',
               color: '#374151',
-              fontSize: '16px'
+              fontSize: '16px',
+              padding: '8px 0',
+              borderBottom: '1px solid #e5e7eb'
             }}>
-              Why does Google show a warning?
+              💡 Why does Google show a warning?
             </summary>
             <div style={{ 
-              padding: '12px 0',
+              padding: '16px 0',
               color: '#6b7280',
               fontSize: '14px',
-              lineHeight: '1.6'
+              lineHeight: '1.6',
+              background: '#f9fafb',
+              borderRadius: '6px',
+              padding: '16px',
+              marginTop: '8px'
             }}>
               <p>Google shows this warning for any app that isn't published in their official marketplace. It's their way of making sure you know what you're authorizing.</p>
               <p style={{ margin: '8px 0 0 0' }}>Our app works entirely within Google's systems - your files never leave Google's servers.</p>
@@ -180,13 +213,22 @@ export default function Home() {
         <footer style={{ 
           textAlign: 'center',
           color: '#6b7280',
-          fontSize: '14px'
+          fontSize: '14px',
+          background: '#fff',
+          padding: '20px',
+          borderRadius: '8px',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+          border: '1px solid #e5e7eb'
         }}>
           <p>
             Questions? Email us at{' '}
             <a 
               href="mailto:umerjutt5397@gmail.com" 
-              style={{ color: '#3b82f6', textDecoration: 'none' }}
+              style={{ 
+                color: '#3b82f6', 
+                textDecoration: 'none',
+                fontWeight: '500'
+              }}
             >
               umerjutt5397@gmail.com
             </a>
