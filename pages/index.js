@@ -1,232 +1,198 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div style={{ 
-      fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', 
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', 
+      background: '#fafbfc', 
       minHeight: '100vh', 
-      padding: '2rem',
-      color: '#333'
+      padding: '20px'
     }}>
       <Head>
-        <title>UmarxUploader - Secure Drive to Drive Transfer Tool</title>
-        <meta name="description" content="Securely transfer your Google Drive data with UmarxUploader. We respect your privacy and never access your data." />
+        <title>UmarxUploader - Drive to Drive Transfer</title>
+        <meta name="description" content="Transfer files between Google Drive accounts safely and securely." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
       
-      <main style={{ 
-        maxWidth: '800px', 
-        margin: '0 auto', 
-        background: '#fff', 
-        borderRadius: '16px', 
-        boxShadow: '0 20px 40px rgba(0,0,0,0.1)', 
-        padding: '3rem',
-        position: 'relative',
-        overflow: 'hidden'
+      <div style={{ 
+        maxWidth: '720px', 
+        margin: '0 auto'
       }}>
+        
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{ 
-            width: '80px', 
-            height: '80px', 
-            background: 'linear-gradient(135deg, #4285f4, #34a853)', 
-            borderRadius: '20px', 
-            margin: '0 auto 1rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '2rem'
-          }}>
-            📁
-          </div>
+        <header style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ 
-            color: '#1a202c', 
-            marginBottom: '0.5rem', 
-            fontSize: '2.5rem',
-            fontWeight: '700',
-            letterSpacing: '-0.025em'
+            fontSize: '32px',
+            fontWeight: '600',
+            color: '#1f2937',
+            margin: '0 0 8px 0'
           }}>
             UmarxUploader
           </h1>
           <p style={{ 
-            fontSize: '1.2rem', 
-            color: '#718096',
-            fontWeight: '500'
+            fontSize: '18px', 
+            color: '#6b7280',
+            margin: 0
           }}>
-            Secure Drive-to-Drive Transfer Tool
+            Transfer files between Google Drive accounts
           </p>
-        </div>
+        </header>
 
-        {/* Privacy Assurance */}
+        {/* Main Content Card */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #e6fffa, #f0fff4)', 
-          border: '2px solid #38a169',
-          padding: '1.5rem', 
-          borderRadius: '12px', 
-          marginBottom: '2rem',
-          textAlign: 'center'
+          background: '#fff', 
+          borderRadius: '8px', 
+          padding: '32px',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+          border: '1px solid #e5e7eb',
+          marginBottom: '24px'
         }}>
-          <h3 style={{ color: '#2f855a', marginBottom: '0.5rem', fontSize: '1.3rem' }}>
-            🔒 Your Privacy is Protected
-          </h3>
-          <p style={{ fontSize: '1.1rem', margin: 0, color: '#2d3748' }}>
-            <strong>We do NOT access, store, view, or share your data.</strong><br />
-            All transfers happen directly between your Google Drives through Google's secure infrastructure.
-          </p>
-        </div>
-
-        {/* Sign-in Process */}
-        <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ 
-            color: '#2d3748', 
-            marginBottom: '1.5rem',
-            fontSize: '1.8rem',
-            fontWeight: '600'
+          
+          {/* Privacy Notice */}
+          <div style={{ 
+            background: '#f0f9ff', 
+            border: '1px solid #0ea5e9',
+            borderRadius: '6px',
+            padding: '16px', 
+            marginBottom: '32px'
           }}>
-            📋 How to Sign In (Step by Step)
+            <h3 style={{ 
+              color: '#0c4a6e', 
+              fontSize: '16px',
+              fontWeight: '600',
+              margin: '0 0 8px 0'
+            }}>
+              Your data stays private
+            </h3>
+            <p style={{ 
+              color: '#1e40af', 
+              margin: 0, 
+              fontSize: '14px',
+              lineHeight: '1.5'
+            }}>
+              We don't store, access, or view your files. Everything happens directly through Google's secure servers.
+            </p>
+          </div>
+
+          {/* Instructions */}
+          <h2 style={{ 
+            fontSize: '20px',
+            fontWeight: '600',
+            color: '#1f2937',
+            margin: '0 0 20px 0'
+          }}>
+            How to get started
           </h2>
           
-          <div style={{ marginBottom: '1.5rem' }}>
+          <div style={{ marginBottom: '24px' }}>
             <div style={{ 
-              background: '#fff5f5', 
-              border: '1px solid #fed7d7',
-              padding: '1rem', 
-              borderRadius: '8px',
-              marginBottom: '1rem'
+              background: '#fef3c7', 
+              border: '1px solid #f59e0b',
+              borderRadius: '6px',
+              padding: '12px',
+              marginBottom: '16px'
             }}>
-              <h4 style={{ color: '#c53030', margin: '0 0 0.5rem 0' }}>
-                ⚠️ Important: Google will show a security warning
-              </h4>
-              <p style={{ margin: 0, fontSize: '0.95rem' }}>
-                This is normal! Google shows this warning for all unverified apps, even safe ones like ours.
+              <p style={{ 
+                margin: 0, 
+                fontSize: '14px',
+                color: '#92400e',
+                fontWeight: '500'
+              }}>
+                ⚠️ Google will show a security warning - this is normal for developer apps
               </p>
             </div>
           </div>
 
           <ol style={{ 
-            marginBottom: '1.5rem', 
-            paddingLeft: '1.5rem',
-            lineHeight: '1.8'
+            paddingLeft: '20px',
+            margin: '0 0 32px 0',
+            color: '#374151'
           }}>
-            <li style={{ marginBottom: '1rem' }}>
-              <strong>Click the "Launch UmarxUploader" button below</strong>
+            <li style={{ marginBottom: '8px' }}>
+              Click "Launch App" below
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              Google will show: <span style={{ 
-                color: '#e53e3e', 
-                background: '#fed7d7', 
-                padding: '0.2rem 0.5rem',
-                borderRadius: '4px',
-                fontFamily: 'monospace'
-              }}>
-                "This app isn't verified"
-              </span>
+            <li style={{ marginBottom: '8px' }}>
+              When you see "This app isn't verified", click <strong>Advanced</strong>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <strong>Click "Advanced"</strong> (small text at the bottom left)
+            <li style={{ marginBottom: '8px' }}>
+              Click <strong>"Go to UmarxUploader (unsafe)"</strong>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <strong>Click "Go to [App Name] (unsafe)"</strong> - Don't worry, it's safe!
-            </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <strong>Sign in with your Google account</strong>
+            <li style={{ marginBottom: '8px' }}>
+              Sign in and allow access to your Google Drive
             </li>
             <li>
-              <strong>Grant permissions</strong> when prompted (needed for Drive access)
+              Start transferring your files
             </li>
           </ol>
-        </div>
 
-        {/* Why the warning appears */}
-        <div style={{ 
-          background: '#f7fafc', 
-          border: '1px solid #e2e8f0',
-          padding: '1.5rem', 
-          borderRadius: '8px', 
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ color: '#2d3748', marginBottom: '1rem' }}>
-            🤔 Why does Google show this warning?
-          </h3>
-          <ul style={{ paddingLeft: '1.2rem', margin: 0 }}>
-            <li>Our app isn't published on Google Workspace Marketplace (costs $$$)</li>
-            <li>Google shows this for ALL unpublished apps - even completely safe ones</li>
-            <li>This is Google's way of making sure you know what you're authorizing</li>
-            <li><strong>Your data never leaves Google's servers</strong> - we just help move it between your drives</li>
-          </ul>
-        </div>
-
-        {/* Launch Button */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <a 
-            href="https://script.google.com/macros/s/AKfycbzVgsOWqUD28F0nsJsKYHN2WptsAZO2kX2H3Uo31uDPsXHvImsnn9-YqzG1_24mLslv/exec" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            style={{ 
-              display: 'inline-block', 
-              background: 'linear-gradient(135deg, #4285f4, #34a853)', 
-              color: '#fff', 
-              padding: '1rem 2.5rem', 
-              borderRadius: '12px', 
-              fontSize: '1.3rem', 
-              fontWeight: '600', 
-              textDecoration: 'none', 
-              boxShadow: '0 8px 20px rgba(66, 133, 244, 0.3)',
-              transition: 'all 0.3s ease',
-              border: 'none',
-              cursor: 'pointer'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 12px 25px rgba(66, 133, 244, 0.4)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 8px 20px rgba(66, 133, 244, 0.3)';
-            }}
-          >
-            🚀 Launch UmarxUploader
-          </a>
-        </div>
-
-        {/* Additional Reassurance */}
-        <div style={{ 
-          borderTop: '1px solid #e2e8f0',
-          paddingTop: '1.5rem',
-          fontSize: '0.95rem', 
-          color: '#4a5568',
-          textAlign: 'center'
-        }}>
-          <h4 style={{ color: '#2d3748', marginBottom: '1rem' }}>
-            🛡️ Additional Security Information
-          </h4>
-          <ul style={{ 
-            listStyle: 'none', 
-            padding: 0, 
-            margin: 0,
-            display: 'grid',
-            gap: '0.5rem'
-          }}>
-            <li>✅ Zero data collection or storage</li>
-            <li>✅ Open source and transparent</li>
-            <li>✅ Works entirely within Google's ecosystem</li>
-            <li>✅ You can revoke access anytime in your Google Account settings</li>
-          </ul>
-          
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f8f9fa', borderRadius: '8px' }}>
-            <p style={{ margin: 0 }}>
-              <strong>Questions or concerns?</strong> Contact us at{' '}
-              <a href="mailto:support@umarxuploader.com" style={{ color: '#3182ce' }}>
-                support@umarxuploader.com
-              </a>
-            </p>
+          {/* Launch Button */}
+          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+            <a 
+              href="https://script.google.com/macros/s/AKfycbzVgsOWqUD28F0nsJsKYHN2WptsAZO2kX2H3Uo31uDPsXHvImsnn9-YqzG1_24mLslv/exec" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                display: 'inline-block', 
+                background: '#3b82f6', 
+                color: '#fff', 
+                padding: '12px 24px', 
+                borderRadius: '6px', 
+                fontSize: '16px', 
+                fontWeight: '500', 
+                textDecoration: 'none',
+                transition: 'background-color 0.2s',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.target.style.background = '#2563eb'}
+              onMouseLeave={(e) => e.target.style.background = '#3b82f6'}
+            >
+              Launch App
+            </a>
           </div>
+
+          {/* Why warning appears */}
+          <details style={{ marginBottom: '20px' }}>
+            <summary style={{ 
+              cursor: 'pointer', 
+              fontWeight: '500',
+              color: '#374151',
+              fontSize: '16px'
+            }}>
+              Why does Google show a warning?
+            </summary>
+            <div style={{ 
+              padding: '12px 0',
+              color: '#6b7280',
+              fontSize: '14px',
+              lineHeight: '1.6'
+            }}>
+              <p>Google shows this warning for any app that isn't published in their official marketplace. It's their way of making sure you know what you're authorizing.</p>
+              <p style={{ margin: '8px 0 0 0' }}>Our app works entirely within Google's systems - your files never leave Google's servers.</p>
+            </div>
+          </details>
         </div>
-      </main>
+
+        {/* Footer */}
+        <footer style={{ 
+          textAlign: 'center',
+          color: '#6b7280',
+          fontSize: '14px'
+        }}>
+          <p>
+            Questions? Email us at{' '}
+            <a 
+              href="mailto:umerjutt5397@gmail.com" 
+              style={{ color: '#3b82f6', textDecoration: 'none' }}
+            >
+              umerjutt5397@gmail.com
+            </a>
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
